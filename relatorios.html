@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veja seus gastos por categoria e compare com a regra financeira 50/30/20 no Controle Certo.">
+    <meta name="theme-color" content="#0F172A">
+    <title>Relatórios - Controle Certo</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="cc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-pagina="relatorios" data-protegida="true">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    
+        <!-- ========== CABEÇALHO E MENU (igual em todas as páginas) ========== -->
+        <header class="cabecalho">
+            <div class="cabecalho__interno">
+                <a class="marca" href="index.html" aria-label="Controle Certo - ir para o painel">
+                    <!-- LOGOTIPO: a imagem do logotipo fica em assets/logo.png (512x512) -->
+                    <span class="marca__logo">
+                        <img class="marca__img" src="assets/logo.png" alt="" width="44" height="44">
+                        <i class="fa-solid fa-wallet marca__icone" aria-hidden="true"></i>
+                    </span>
+                    <span class="marca__nome">Controle Certo</span>
+                </a>
+    
+                <button type="button" class="menu-btn" id="menu-btn"
+                        aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+    
+                <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+                    <div class="menu__topo">
+                        <span>Menu</span>
+                        <button type="button" class="menu-btn" id="menu-fechar" aria-label="Fechar menu">
+                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
+                    </div>
+    
+                    <ul class="menu__lista">
+                        <li><a class="menu__link" href="index.html"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Painel</a></li>
+                        <li><a class="menu__link" href="metas.html"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Metas</a></li>
+                        <li><a class="menu__link" href="relatorios.html" aria-current="page"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i> Relatórios</a></li>
+                        <li><a class="menu__link" href="galeria.html"><i class="fa-solid fa-images" aria-hidden="true"></i> Galeria</a></li>
+                        <li><a class="menu__link" href="sobre.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Sobre</a></li>
+                    </ul>
+    
+                    <div class="menu__usuario">
+                        <span class="avatar" data-avatar><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                        <span class="menu__nome" data-nome-usuario>Visitante</span>
+                        <button type="button" class="btn btn--secundario btn--pequeno" data-acao="sair">
+                            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sair
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="overlay" id="overlay"></div>
+
+    <!-- ========== CONTEÚDO ========== -->
+    <main id="conteudo">
+
+        <div class="pagina-titulo">
+            <h1>Relatórios e dicas</h1>
+            <p>Descubra para onde vai o seu dinheiro e compare seus gastos com a regra financeira 50/30/20.</p>
+        </div>
+
+        <section aria-labelledby="titulo-categorias">
+            <div class="linha">
+                <h2 id="titulo-categorias">Gastos por categoria</h2>
+                <div class="campo campo--filtro">
+                    <label for="filtro-mes">Período</label>
+                    <select id="filtro-mes">
+                        <option value="todos">Todos os períodos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="area-relatorio">
+                <div id="lista-relatorio"></div>
+                <div class="relatorio-total">
+                    <span>Total geral</span>
+                    <span id="total-geral-relatorio">R$ 0,00</span>
+                </div>
+            </div>
+            <p class="vazio" id="vazio-relatorio" hidden>Nenhuma despesa neste período. Cadastre despesas no <a href="index.html">Painel</a> para ver o relatório.</p>
+        </section>
+
+        <section aria-labelledby="titulo-dicas">
+            <h2 id="titulo-dicas">Regra 50/30/20</h2>
+            <p class="texto-suave">A regra sugere dividir a renda em 50% para necessidades, 30% para desejos e 20% para poupança. Os limites abaixo usam a renda do período escolhido acima.</p>
+
+            <div class="alerta alerta--info" id="aviso-renda" hidden>
+                Informe sua renda mensal no <a href="index.html">Painel</a> para calcular os seus limites.
+            </div>
+
+            <div class="grid-auto">
+                <article class="card card--borda-azul" aria-labelledby="nec-titulo">
+                    <h3 id="nec-titulo"><i class="fa-solid fa-house dica__icone cor-azul" aria-hidden="true"></i>50% &middot; Necessidades</h3>
+                    <p class="texto-suave">Metade da renda para o básico: moradia, contas da casa, mercado, transporte e saúde.</p>
+                    <p class="texto-suave" id="nec-inclui"></p>
+
+                    <div class="dica__valor">
+                        <small>Limite ideal</small>
+                        <strong id="nec-limite" class="cor-azul">R$ 0,00</strong>
+                    </div>
+                    <div class="dica__valor">
+                        <small id="nec-rotulo-real">Gasto real</small>
+                        <strong id="nec-real">R$ 0,00</strong>
+                    </div>
+
+                    <div class="progresso dica__barra" id="nec-progresso" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="50% &middot; Necessidades">
+                        <div class="progresso__barra" id="nec-barra"></div>
+                    </div>
+                    <p class="dica__status" id="nec-status" aria-live="polite"></p>
+                </article>
+                <article class="card card--borda-ciano" aria-labelledby="des-titulo">
+                    <h3 id="des-titulo"><i class="fa-solid fa-cart-shopping dica__icone cor-ciano" aria-hidden="true"></i>30% &middot; Desejos</h3>
+                    <p class="texto-suave">Lazer, restaurantes, compras e assinaturas: o que melhora a vida, mas não é essencial.</p>
+                    <p class="texto-suave" id="des-inclui"></p>
+
+                    <div class="dica__valor">
+                        <small>Limite ideal</small>
+                        <strong id="des-limite" class="cor-ciano">R$ 0,00</strong>
+                    </div>
+                    <div class="dica__valor">
+                        <small id="des-rotulo-real">Gasto real</small>
+                        <strong id="des-real">R$ 0,00</strong>
+                    </div>
+
+                    <div class="progresso dica__barra" id="des-progresso" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="30% &middot; Desejos">
+                        <div class="progresso__barra" id="des-barra"></div>
+                    </div>
+                    <p class="dica__status" id="des-status" aria-live="polite"></p>
+                </article>
+                <article class="card card--borda-indigo" aria-labelledby="poup-titulo">
+                    <h3 id="poup-titulo"><i class="fa-solid fa-piggy-bank dica__icone cor-indigo" aria-hidden="true"></i>20% &middot; Poupança e metas</h3>
+                    <p class="texto-suave">Dinheiro que você guarda para investir ou financiar os seus objetivos.</p>
+                    <p class="texto-suave" id="poup-inclui"></p>
+
+                    <div class="dica__valor">
+                        <small>Limite ideal</small>
+                        <strong id="poup-limite" class="cor-indigo">R$ 0,00</strong>
+                    </div>
+                    <div class="dica__valor">
+                        <small id="poup-rotulo-real">Gasto real</small>
+                        <strong id="poup-real">R$ 0,00</strong>
+                    </div>
+
+                    <div class="progresso dica__barra" id="poup-progresso" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="20% &middot; Poupança e metas">
+                        <div class="progresso__barra" id="poup-barra"></div>
+                    </div>
+                    <p class="dica__status" id="poup-status" aria-live="polite"></p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; <span data-ano></span> Controle Certo &middot; Projeto acadêmico de gestão financeira</p>
+    </footer>
+
+    <script src="cc.js"></script>
+    <script src="relatorios.js"></script>
+</body>
+</html>

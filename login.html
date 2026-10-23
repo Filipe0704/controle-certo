@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre ou crie sua conta no Controle Certo, o sistema de controle financeiro pessoal.">
+    <meta name="theme-color" content="#0F172A">
+    <title>Entrar - Controle Certo</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="cc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-pagina" data-pagina="login">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <main id="conteudo" class="auth-caixa">
+
+        <header class="auth-cabecalho">
+            <div class="marca">
+                <!-- LOGOTIPO: a imagem do logotipo fica em assets/logo.png (512x512) -->
+                <span class="marca__logo">
+                    <img class="marca__img" src="assets/logo.png" alt="Logotipo do Controle Certo" width="72" height="72">
+                    <i class="fa-solid fa-wallet marca__icone" aria-hidden="true"></i>
+                </span>
+                <h1 class="marca__nome">Controle Certo</h1>
+            </div>
+            <p>Gestão financeira inteligente</p>
+        </header>
+
+        <div class="abas" role="tablist" aria-label="Acesso à conta">
+            <button type="button" class="aba" role="tab" id="aba-entrar"
+                    aria-selected="true" aria-controls="painel-entrar">Entrar</button>
+            <button type="button" class="aba" role="tab" id="aba-cadastro"
+                    aria-selected="false" aria-controls="painel-cadastro" tabindex="-1">Criar conta</button>
+        </div>
+
+        <div id="mensagem" class="alerta" role="alert" hidden></div>
+
+        <!-- ENTRAR -->
+        <form id="painel-entrar" class="auth-form" role="tabpanel" aria-labelledby="aba-entrar" novalidate>
+            <div class="campo">
+                <label for="login-email">E-mail</label>
+                <input type="email" id="login-email" name="email" maxlength="254"
+                       autocomplete="username" placeholder="nome@exemplo.com"
+                       required aria-describedby="login-email-erro">
+                <p class="campo-erro" id="login-email-erro"></p>
+            </div>
+
+            <div class="campo">
+                <label for="login-senha">Senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="login-senha" name="senha" maxlength="128"
+                           autocomplete="current-password" placeholder="Sua senha"
+                           required aria-describedby="login-senha-erro">
+                    <button type="button" class="campo-senha__ver" data-alvo="login-senha"
+                            aria-label="Mostrar senha" aria-pressed="false">
+                        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="campo-erro" id="login-senha-erro"></p>
+            </div>
+
+            <button type="submit" class="btn btn--bloco">Entrar no painel</button>
+        </form>
+
+        <!-- CRIAR CONTA -->
+        <form id="painel-cadastro" class="auth-form" role="tabpanel" aria-labelledby="aba-cadastro" novalidate hidden>
+            <div class="campo">
+                <label for="cad-nome">Nome completo</label>
+                <input type="text" id="cad-nome" name="nome" maxlength="40"
+                       autocomplete="name" placeholder="Como quer ser chamado"
+                       required aria-describedby="cad-nome-erro">
+                <p class="campo-erro" id="cad-nome-erro"></p>
+            </div>
+
+            <div class="campo">
+                <label for="cad-email">E-mail</label>
+                <input type="email" id="cad-email" name="email" maxlength="254"
+                       autocomplete="email" placeholder="nome@exemplo.com"
+                       required aria-describedby="cad-email-erro">
+                <p class="campo-erro" id="cad-email-erro"></p>
+            </div>
+
+            <div class="campo">
+                <label for="cad-senha">Crie uma senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="cad-senha" name="senha" maxlength="128"
+                           autocomplete="new-password" placeholder="Mínimo de 8 caracteres"
+                           required aria-describedby="cad-senha-erro forca-texto">
+                    <button type="button" class="campo-senha__ver" data-alvo="cad-senha"
+                            aria-label="Mostrar senha" aria-pressed="false">
+                        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="forca-senha" aria-hidden="true">
+                    <div class="forca-senha__barra" id="forca-barra" data-nivel="0"></div>
+                </div>
+                <p class="campo__ajuda" id="forca-texto">Use no mínimo 8 caracteres.</p>
+                <p class="campo-erro" id="cad-senha-erro"></p>
+            </div>
+
+            <div class="campo">
+                <label for="cad-confirma">Repita a senha</label>
+                <div class="campo-senha">
+                    <input type="password" id="cad-confirma" name="confirma" maxlength="128"
+                           autocomplete="new-password" placeholder="Digite a senha novamente"
+                           required aria-describedby="cad-confirma-erro">
+                    <button type="button" class="campo-senha__ver" data-alvo="cad-confirma"
+                            aria-label="Mostrar senha" aria-pressed="false">
+                        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="campo-erro" id="cad-confirma-erro"></p>
+            </div>
+
+            <button type="submit" class="btn btn--bloco">Criar conta</button>
+        </form>
+
+    </main>
+
+    <script src="cc.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

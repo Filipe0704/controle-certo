@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o projeto Controle Certo, fale com a equipe e edite os dados da sua conta.">
+    <meta name="theme-color" content="#0F172A">
+    <title>Sobre - Controle Certo</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="cc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-pagina="sobre" data-protegida="true">
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    
+        <!-- ========== CABEÇALHO E MENU (igual em todas as páginas) ========== -->
+        <header class="cabecalho">
+            <div class="cabecalho__interno">
+                <a class="marca" href="index.html" aria-label="Controle Certo - ir para o painel">
+                    <!-- LOGOTIPO: a imagem do logotipo fica em assets/logo.png (512x512) -->
+                    <span class="marca__logo">
+                        <img class="marca__img" src="assets/logo.png" alt="" width="44" height="44">
+                        <i class="fa-solid fa-wallet marca__icone" aria-hidden="true"></i>
+                    </span>
+                    <span class="marca__nome">Controle Certo</span>
+                </a>
+    
+                <button type="button" class="menu-btn" id="menu-btn"
+                        aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+    
+                <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+                    <div class="menu__topo">
+                        <span>Menu</span>
+                        <button type="button" class="menu-btn" id="menu-fechar" aria-label="Fechar menu">
+                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
+                    </div>
+    
+                    <ul class="menu__lista">
+                        <li><a class="menu__link" href="index.html"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Painel</a></li>
+                        <li><a class="menu__link" href="metas.html"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Metas</a></li>
+                        <li><a class="menu__link" href="relatorios.html"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i> Relatórios</a></li>
+                        <li><a class="menu__link" href="galeria.html"><i class="fa-solid fa-images" aria-hidden="true"></i> Galeria</a></li>
+                        <li><a class="menu__link" href="sobre.html" aria-current="page"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Sobre</a></li>
+                    </ul>
+    
+                    <div class="menu__usuario">
+                        <span class="avatar" data-avatar><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                        <span class="menu__nome" data-nome-usuario>Visitante</span>
+                        <button type="button" class="btn btn--secundario btn--pequeno" data-acao="sair">
+                            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sair
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="overlay" id="overlay"></div>
+
+    <!-- ========== CONTEÚDO ========== -->
+    <main id="conteudo">
+
+        <div class="pagina-titulo">
+            <h1>Sobre o projeto</h1>
+            <p>Conheça o Controle Certo, entre em contato e mantenha os dados da sua conta em dia.</p>
+        </div>
+
+        <section aria-labelledby="titulo-sobre">
+            <div class="sobre-hero">
+                <div>
+                    <h2 id="titulo-sobre">O que é o Controle Certo?</h2>
+                    <p>O Controle Certo é um sistema de gestão financeira pessoal criado para ajudar você a entender para onde vai o seu dinheiro e a alcançar seus objetivos, sem planilhas complicadas.</p>
+                    <p>Você registra suas despesas por categoria, acompanha o saldo do mês, cria metas e compara os seus gastos com a regra 50/30/20: metade da renda para necessidades, 30% para desejos e 20% para poupança.</p>
+                    <p>Trata-se de um projeto acadêmico da Avaliação A2, desenvolvido com HTML5, CSS3 e JavaScript puro, com o gráfico feito em Chart.js e os ícones da Font Awesome. Os seus dados ficam salvos apenas neste navegador.</p>
+                    <!-- Para identificar a equipe, acrescente aqui um parágrafo com os nomes, o curso e a disciplina. -->
+                </div>
+                <ul class="sobre-lista">
+                    <li>
+                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                        <span><strong>Painel financeiro</strong><br><span class="texto-suave">Renda, despesas por categoria, saldo e gráfico.</span></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                        <span><strong>Metas</strong><br><span class="texto-suave">Objetivos com barra de progresso e depósitos.</span></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                        <span><strong>Relatórios e regra 50/30/20</strong><br><span class="texto-suave">Compare seus gastos com os limites ideais.</span></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-images" aria-hidden="true"></i>
+                        <span><strong>Galeria</strong><br><span class="texto-suave">Ilustrações com filtro e visualização ampliada.</span></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        <span><strong>Login seguro</strong><br><span class="texto-suave">A senha é guardada com hash PBKDF2, nunca em texto.</span></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                        <span><strong>Responsivo e acessível</strong><br><span class="texto-suave">Funciona no celular e no computador, com navegação por teclado.</span></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section aria-labelledby="titulo-contato">
+            <h2 id="titulo-contato">Fale com a gente</h2>
+            <div class="alerta alerta--info">
+                Este formulário é uma demonstração: não há servidor de e-mail, então a mensagem fica registrada apenas neste navegador.
+            </div>
+            <div class="alerta alerta--sucesso" id="msg-contato" role="alert" hidden></div>
+
+            <form id="form-contato" novalidate>
+                <div class="form-grade">
+                    <div class="campo">
+                        <label for="contato-nome">Nome</label>
+                        <input type="text" id="contato-nome" maxlength="40" autocomplete="name"
+                               required aria-describedby="contato-nome-erro">
+                        <p class="campo-erro" id="contato-nome-erro"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="contato-email">E-mail</label>
+                        <input type="email" id="contato-email" maxlength="254" autocomplete="email"
+                               placeholder="nome@exemplo.com" required aria-describedby="contato-email-erro">
+                        <p class="campo-erro" id="contato-email-erro"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="contato-assunto">Assunto</label>
+                        <select id="contato-assunto" required aria-describedby="contato-assunto-erro">
+                            <option value="">Selecione...</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="problema">Problema</option>
+                            <option value="elogio">Elogio</option>
+                        </select>
+                        <p class="campo-erro" id="contato-assunto-erro"></p>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="contato-mensagem">Mensagem</label>
+                    <textarea id="contato-mensagem" maxlength="500" required
+                              placeholder="Escreva sua mensagem (mínimo de 10 caracteres)"
+                              aria-describedby="contato-contador contato-mensagem-erro"></textarea>
+                    <p class="campo__ajuda" id="contato-contador">0/500 caracteres</p>
+                    <p class="campo-erro" id="contato-mensagem-erro"></p>
+                </div>
+
+                <div class="form-acoes">
+                    <span></span>
+                    <button type="submit" class="btn btn--mobile-bloco">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar mensagem
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section aria-labelledby="titulo-conta">
+            <h2 id="titulo-conta">Editar minha conta</h2>
+
+            <div class="perfil-editar">
+                <span class="avatar avatar--grande" data-avatar><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+
+                <div class="linha">
+                    <input type="file" id="foto-input" class="input-arquivo"
+                           accept="image/jpeg,image/png,image/webp" aria-describedby="foto-ajuda foto-erro">
+                    <label class="btn btn--secundario" for="foto-input">
+                        <i class="fa-solid fa-camera" aria-hidden="true"></i> Escolher nova foto
+                    </label>
+                    <button type="button" class="btn btn--perigo" id="foto-remover">
+                        <i class="fa-solid fa-trash" aria-hidden="true"></i> Remover foto
+                    </button>
+                </div>
+                <p class="campo__ajuda" id="foto-ajuda">Use uma imagem JPG, PNG ou WebP com até 1 MB.</p>
+                <p class="campo-erro" id="foto-erro" role="alert"></p>
+            </div>
+
+            <form id="form-conta" novalidate>
+                <div class="campo">
+                    <label for="editar-nome">Nome de exibição</label>
+                    <input type="text" id="editar-nome" maxlength="40" autocomplete="name"
+                           required aria-describedby="editar-nome-erro">
+                    <p class="campo-erro" id="editar-nome-erro"></p>
+                </div>
+                <div class="form-acoes">
+                    <span></span>
+                    <button type="submit" class="btn btn--mobile-bloco">
+                        <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Salvar alterações
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section aria-labelledby="titulo-dados">
+            <h2 id="titulo-dados">Dados financeiros</h2>
+            <p class="texto-suave">Apague a renda, as despesas e as metas salvas neste navegador. Sua conta e sua foto continuam como estão. Essa ação não pode ser desfeita.</p>
+            <button type="button" class="btn btn--perigo" id="apagar-dados">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Apagar meus dados financeiros
+            </button>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; <span data-ano></span> Controle Certo &middot; Projeto acadêmico de gestão financeira</p>
+    </footer>
+
+    <script src="cc.js"></script>
+    <script src="sobre.js"></script>
+</body>
+</html>
